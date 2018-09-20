@@ -1,0 +1,113 @@
+body {
+    font-family: 'Lora', serif;
+    background: rgb(206, 206, 206);
+    background-size: contain;
+}
+
+h2, p, .readme-wrapper {
+    text-align: center;
+    color: darkred;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.boxes {
+    display: block;
+    margin: 5em;
+    padding: 3em;
+    border: solid darkorange;
+    border-radius: 2.4em;
+    width: 20%;
+    z-index: 1;
+}
+
+a:hover {
+    color: darkorange;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#lionspan {
+    color: goldenrod;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 2em;
+}
+
+#pythonspan {
+    color: yellowgreen;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 2em;
+}
+
+#catespan {
+    color: deepskyblue;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 2em;
+}
+
+#toyspan {
+    color: blueviolet;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 2em;
+}
+
+#box2 {
+    background: yellow;
+    position: relative;
+}
+
+#box1 {
+    background: pink;
+    position: relative;
+}
+
+#box3 {
+    background: lightcoral;
+    position: relative;
+}
+
+#box4 {
+    background: lightblue;
+    position: relative;
+}
+
+.img {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 2.35em;
+    left: .5em;
+    border: dotted turquoise;
+    z-index: 2;
+}
+
+#lionpic {
+    background: url(https://amp.thisisinsider.com/images/59faaafb87483c30008b45bf-750-375.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+background-position: center;
+}
+
+#junglepic {
+    background: url(https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/review_gallery_carousel_slide_thumbnail/public/screenshots/csm-movie/the-jungle-book-ss2.jpg?itok=TjBOhprl);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#ladypic {
+    background: url(http://2.bp.blogspot.com/-nJcRwqSojkY/Th9IZHMMugI/AAAAAAAAA2E/9hsMRAd9Jcs/s1600/ladyandthetramp2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#toypic {
+    background: url(https://cdn-images-1.medium.com/max/1600/1*2zZ9Q3WdIHmUqEFjz8keTg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

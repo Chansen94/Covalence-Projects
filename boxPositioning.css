@@ -1,0 +1,38 @@
+.box {
+    height: 10em;
+    width: 10em;
+    float: left;
+    z-index: 1;
+
+}
+
+.blue {
+    background: blue;
+}
+
+.red {
+    background: red;
+    height: 8em;
+    width: 8em;
+    z-index: 2;
+}
+
+.border-yellow {
+    border: dotted yellow;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.green {
+    background: green;
+    height: 6em;
+    width: 6em;
+    z-index: 3;
+}
+
+.purple {
+    background: purple;
+    height: 4em;
+    width: 4em;
+    z-index: 4;
+}

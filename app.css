@@ -1,0 +1,60 @@
+[for="email"],[for='password'] {
+    font-weight: bolder;
+    font-size: .85em;
+    margin: 3px;
+}
+
+input {
+    width: 80%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+.highlight {
+    background: yellow;
+}
+
+input, label,  button {
+    display: block;
+}
+
+body {
+    margin: 0;
+    background: url(https://scontent.fdet1-2.fna.fbcdn.net/v/t1.0-9/485423_10201755315427881_785604078_n.jpg?_nc_cat=0&oh=d942d2714141579148696a900d6d73fc&oe=5C2A31E3);
+    background-size: 100rem;
+    color: #000005;
+    background-repeat: no-repeat;
+}
+
+button {
+    margin: 1em;
+    padding:  0 1em;
+}
+
+h1 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-style: italic;
+    color: rgb(13, 54, 236);
+}
+
+form {
+    font-family: 'Montserrat', 'sans-serif';
+    padding: 1em;
+    margin: 3em auto;
+    width: 30%;
+    border: 1px solid grey;
+    border-radius: 15px;
+    box-shadow: 14px 11px 36px 0px rgba(0,0,0,0.75);
+}
+
+hr {
+    width: 43%;
+}
+
+footer {
+    position: relative;
+    bottom: 20rem;
+}
