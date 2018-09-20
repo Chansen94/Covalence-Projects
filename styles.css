@@ -111,3 +111,47 @@ background-position: center;
     background-repeat: no-repeat;
     background-position: center;
 }
+
+h1 {
+    color: #33f756;
+}
+
+.theclass {
+    color: orange;
+}
+
+.thenextclass {
+    color: darkgreen;
+}
+
+#rank1 {
+    color: lightblue;
+}
+
+#rank2 {
+    color: lightcoral;
+}
+
+#rank3, #li1 {
+    color: lightseagreen;
+}
+
+#rank4 {
+    color: lightgoldenrodyellow;
+}
+
+#rank5 {
+    color: lightskyblue;
+}
+
+.divBorder {
+    border: solid 2px black;
+}
+
+ul{
+    color: goldenrod;
+}
+
+li { 
+    color: red;
+}
