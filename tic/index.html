@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS Drills</title>
+    <title>tic-tac-toe!</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div id="board">
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic-Tac-Toe</h1>
+        <h3 class="result"></h3>
         <div class="row">
-            <div class="top left"></div>
-            <div class="top middle"></div>
-            <div class="top right"></div>
+            <div class="top left cell"></div>
+            <div class="top middle cell"></div>
+            <div class="top right cell"></div>
         </div>
         <div class="row">
-            <div class="center left"></div>
-            <div class="center middle"></div>
-            <div class="center right"></div>
+            <div class="center left cell"></div>
+            <div class="center middle cell"></div>
+            <div class="center right cell"></div>
         </div>
         <div class="row">
-            <div class="bottom left"></div>
-            <div class="bottom middle"></div>
-            <div class="bottom right"></div>
+            <div class="bottom left cell"></div>
+            <div class="bottom middle cell"></div>
+            <div class="bottom right cell"></div>
         </div>
+
+        <button class="ng btn">New Game</button>
     </div>
+
+    <script src="app.js"></script>
 </body>
+
 </html>
