@@ -3,16 +3,11 @@
 //      C:\Users\conno\Documents\Source\Projects
 
 
-function xWin() {
-    if (toprow == 'XXX') {
-        alert("X Wins!");
-    }
-}
-
 // Setting the X's and O's on the board. 
 let cells = document.querySelectorAll('.cell');
 
 let i = 1;
+
 cells.forEach(function(cell) {
 
     cell.addEventListener("click", cellClicked);
@@ -25,15 +20,19 @@ function cellClicked(e) {
     } else if (e.target.textContent == '') {
         if (i % 2 != 0) {
             e.target.textContent = 'O';
-            
+
         } else {
             e.target.textContent = 'X';
-            tl.addEventListener('click', xAddToTop);
-            xWin();
+
         }
     i++;
     }
 };
+
+
+
+
+
 
 
 //  Tracking the moves played.
@@ -46,122 +45,6 @@ let midcol = '';
 let rightcol = '';
 let diag1 = '';
 let diag2 = '';
-
-let topcell = document.querySelectorAll('.top');
-let centercell = document.querySelectorAll('.center');
-let botcell = document.querySelectorAll('.bottom');
-let leftcell = document.querySelectorAll('.left');
-let midcell = document.querySelectorAll('.middle');
-let rightcell = document.querySelectorAll('.right')
- 
-let j = 1;
-let k = 1;
-let l = 1;
-let m = 1;
-let n = 1;
-let p = 1;
-
-topcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (j % 2 != 0) {
-            toprow = toprow + 'O';
-        } else {
-            toprow = toprow + 'X';
-        }
-        console.log('Top: ' + toprow);
-        if (toprow == 'XXX') {
-            alert("X's wins in the center row!");
-        } else if (toprow == 'OOO') {
-            alert("O's wins in the center row!");
-        }
-        j++;
-    });
-});
-
-centercell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (k % 2 != 0) {
-            centerrow = centerrow + 'O';
-        } else {
-            centerrow = centerrow + 'X';
-        }
-        console.log('Center: ' + centerrow);
-        if (centerrow == 'XXX') {
-            alert("X's wins in the center row!");
-        } else if (centerrow == 'OOO') {
-            alert("O's wins in the center row!");
-        }
-        k++;
-    });
-});
-
-botcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (l % 2 != 0) {
-            botrow = botrow + 'O';
-        } else {
-            botrow = botrow + 'X';
-        }
-        console.log('Bottom: ' + botrow);
-        if (botrow == 'XXX') {
-            alert("X's wins in the bottom row!");
-        } else if (botrow == 'OOO') {
-            alert("O's wins in the bottom row!");
-        }
-        l++;
-    });
-});
-
-leftcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (m % 2 != 0) {
-            leftcol = leftcol + 'O';
-        } else {
-            leftcol = leftcol + 'X';
-        }
-        console.log('Left: ' + leftcol);
-        if (leftcol == 'XXX') {
-            alert("X's wins in the Left Column!");
-        } else if (leftcol == 'OOO') {
-            alert("O's wins in the Left Column!");
-        }
-        m++;
-    });
-});
-
-midcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (n % 2 != 0) {
-            midcol = midcol + 'O';
-        } else {
-            midcol = midcol + 'X';
-        }
-        console.log('Middle: ' + midcol);
-        if (midcol == 'XXX') {
-            alert("X's wins in the Middle Column!");
-        } else if (midcol == 'OOO') {
-            alert("O's wins in the Middle Column!");
-        }
-        n++;
-    });
-});
-
-rightcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
-        if (p % 2 != 0) {
-            rightcol = rightcol + 'O';
-        } else {
-            rightcol = rightcol + 'X';
-        }
-        console.log('Right: ' + rightcol);
-        if (rightcol == 'XXX') {
-            alert("X's wins in the Right Column!");
-        } else if (rightcol == 'OOO') {
-            alert("O's wins in the Right Column!");
-        }
-        p++;
-    });
-});
 
 
 // Creating the button to clear the board and reinitialize the moves lists
@@ -178,8 +61,8 @@ btn.addEventListener("click", function() {
         leftcol= '';
         midcol = '';
         rightcol = '';
-        tldiag = '';
-        bldiag = '';
+        diag1 = '';
+        diag2 = '';
     });
 
 }
@@ -192,73 +75,151 @@ btn.addEventListener("click", function() {
 //  Need to prevent a click from rewriting cells already containing a character.
 
 
-let tl = document.querySelector('top.left');
-let tm = document.querySelector('top.middle');
-let tr = document.querySelector('top.right');
+let tlCell = document.querySelector('.top.left');
+let tmCell = document.querySelector('.top.middle');
+let trCell = document.querySelector('.top.right');
 
-let cl = document.querySelector('center.left');
-let cm = document.querySelector('center.middle');
-let cr = document.querySelector('center.right');
+let clCell = document.querySelector('.center.left');
+let cmCell = document.querySelector('.center.middle');
+let crCell = document.querySelector('.center.right');
 
-let bl = document.querySelector('bottom.left');
-let bm = document.querySelector('bottom.middle');
-let br = document.querySelector('bottom.right');
+let blCell = document.querySelector('.bottom.left');
+let bmCell = document.querySelector('.bottom.middle');
+let brCell = document.querySelector('.bottom.right');
 
 
-tl.addEventListener('click', function() {
-    xAddToTop;
-    xAddToLeft;
-    xAddToDiag1;
+
+
+tlCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToTop();
+        xAddToLeft();
+        xAddToDiag1();
+    } else {
+        oAddToTop();
+        oAddToLeft();
+        oAddToDiag1();
+    }
+    console.log('top: ' + toprow);
+    console.log('left: ' + leftcol);
+    console.log('diag1: ' + diag1);
 });
 
-tm.addEventListener('click', function() {
-    xAddToTop;
-    xAddToMiddle;
+tmCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToTop();
+        xAddToMiddle();
+    } else {
+        oAddToTop();
+        oAddToMiddle();
+    }
+    console.log('top: ' + toprow);
+    console.log('mid: ' + midcol);
 });
 
-tr.addEventListener('click', function() {
-    xAddToTop;
-    xAddToRight;
-    xAddToDiag2;
+trCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToTop();
+        xAddToRight();
+        xAddToDiag2();
+    } else {
+        oAddToTop();
+        oAddToRight();
+        oAddToDiag2();
+    }
+    console.log('top: ' + toprow);
+    console.log('right: ' + rightcol);
+    console.log('diag2: ' + diag2);
 });
 
-cl.addEventListener('click', function() {
-    xAddToCenter;
-    xAddToLeft;
+clCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToCenter();
+        xAddToLeft();
+    } else {
+        oAddToCenter();
+        oAddToLeft();
+    }
+    console.log('center: ' + centerrow);
+    console.log('left: ' + leftcol);
 });
 
-cm.addEventListener('click', function() {
-    xAddToCenter;
-    xAddToMiddle;
-    xAddToDiag1;
-    xAddToDiag2;
+cmCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToCenter();
+        xAddToMiddle();
+        xAddToDiag1();
+        xAddToDiag2();
+    } else {
+        oAddToCenter();
+        oAddToMiddle();
+        oAddToDiag1();
+        oAddToDiag2();
+    }
+    console.log('top: ' + toprow);
+    console.log('middle: ' + midcol);
+    console.log('diag1: ' + diag1);
+    console.log('diag2: ' + diag2);
 });
 
-cr.addEventListener('click', function() {
-    xAddToCenter;
-    xAddToRight;
+crCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToCenter();
+        xAddToRight();
+    } else {
+        oAddToCenter();
+        oAddToRight();
+    }
+    console.log('center: ' + centerrow);
+    console.log('right: ' + righttcol);
 });
 
-bl.addEventListener('click', function() {
-    xAddToBottom;
-    xAddToLeft;
-    xAddToDiag2;
+blCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToBottom();
+        xAddToLeft();
+        xAddToDiag2();
+    } else {
+        oAddToBottom();
+        oAddToLeft();
+        oAddToDiag2();
+    }
+    console.log('bottom: ' + botrow);
+    console.log('left: ' + leftcol);
+    console.log('diag2: ' + diag2);
 });
 
-bm.addEventListener('click', function() {
-    xAddToBottom;
-    xAddToMiddle;
+bmCell.addEventListener('click', function() {
+    if (i % 2 != 0) {
+        xAddToBottom();
+        xAddToMiddle();
+    } else {
+        oAddToBottom();
+        oAddToMiddle();
+    }
+    console.log('bottom: ' + botrow);
+    console.log('middle: ' + midcol);
 });
 
-br.addEventListener('click', function() {
-    xAddToBottom;
-    xAddToRight;
-    xAddToDiag1;
+brCell.addEventListener('click', function() {
+        if (i % 2 != 0) {
+            xAddToBottom();
+            xAddToRight();
+            xAddToDiag1();
+        } else {
+            oAddToBottom();
+            oAddToRight();
+            oAddToDiag1();
+        }
+    console.log('bottom: ' + botrow);
+    console.log('right: ' + rightcol);
+    console.log('diag1: ' + diag1);
 });
 
 
 // Creating functions to add append text on turns
 
+// X functions:
 function xAddToTop() {
     toprow = toprow + 'X';
 };
@@ -291,6 +252,38 @@ function xAddToDiag2() {
     diag2 = diag2 + 'X';
 };
 
+// O functions:
 
+function oAddToTop() {
+    toprow = toprow + 'O';
+};
+
+function oAddToCenter() {
+    centerrow = centerrow = 'O';
+};
+
+function oAddToBottom() {
+    botrow = botrow + 'O';
+};
+
+function oAddToLeft() {
+    leftcol = leftcol + 'O';
+};
+
+function oAddToMiddle() {
+    midcol = midcol + 'O';
+};
+
+function oAddToRight() {
+    rightcol = rightcol + 'O';
+};
+
+function oAddToDiag1() {
+    diag1 = diag1 + 'O';
+};
+
+function oAddToDiag2() {
+    diag2 = diag2 + 'O';
+};
 
 
