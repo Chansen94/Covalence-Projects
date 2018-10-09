@@ -1,33 +1,7 @@
 
+//      NEED TO SYNC W/ GIT USING: 
+//      C:\Users\conno\Documents\Source\Projects
 
-// let cells = document.querySelectorAll('.cell');
-
-// let i = 1;
-// cells.forEach(function(cell) {
-//             // Setting the X's and O's on the board. 
-//         if (i % 2 == 1) {
-//             cell.addEventListener("click", cellClickedO);
-//         } else {
-//             cell.addEventListener("click", cellClickedX);
-//         }
-
-//     i++;
-// });
-
-
-// function cellClickedO(e) {
-
-//      e.target.textContent = 'O';
-    
-// };
-
-// function cellClickedX(e) {
-//     e.target.textContent = 'X';
-// };
-
-
-//
-// 
 
 // Setting the X's and O's on the board. 
 let cells = document.querySelectorAll('.cell');
@@ -40,7 +14,7 @@ cells.forEach(function(cell) {
 });
 
 function cellClicked(e) {
-    
+
     if (i % 2 != 0) {
         e.target.textContent = 'O';
     } else {
@@ -50,14 +24,7 @@ function cellClicked(e) {
 };
 
 
-
-
-
-
-
-// 
-// 
- //  Tracking the moves played.
+//  Tracking the moves played.
 
  let toprow = '';
  let midrow = '';
@@ -66,46 +33,39 @@ function cellClicked(e) {
  let bldiag = '';
  
  let topcell = document.querySelectorAll('.top');
- let midcell = document.querySelectorAll('.mid');
- let botcell = document.querySelectorAll('.bot');
+ let midcell = document.querySelectorAll('.middle');
+ let botcell = document.querySelectorAll('.bottom');
  
 
-topcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
+topcell.forEach(function(tcell) {
+    tcell.addEventListener("click", function() {
         toprow = toprow + 'x';
         console.log(toprow);
         if (toprow == 'xxx') {
-            alert('X wins!');
+            alert('X wins in the top row!');
         }
     });
 });
 
-midcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
+midcell.forEach(function(mcell) {
+    mcell.addEventListener("click", function() {
         midrow = midrow + 'x';
+        console.log(midrow);
         if (midrow == 'xxx') {
-            alert('X wins!');
+            alert('X wins in the middle column!');
         }
     });
 });
 
-botcell.forEach(function(cell) {
-    cell.addEventListener("click", function() {
+botcell.forEach(function(bcell) {
+   bcell.addEventListener("click", function() {
         botrow = botrow + 'x';
+        console.log(botrow);
         if (botrow == 'xxx') {
-            alert('X wins!');
+            alert('X wins in the bottom row!');
         }
     });
 });
-
-
-// if (cell.bottom) {
-//     botrow = botrow + 'x';
-// } else if (cell.middle) {
-//     midrow = midrow + 'x';
-// } else if (cell.top) {
-//     toprow = toprow + 'x';
-// }
 
 
 
@@ -128,8 +88,7 @@ btn.addEventListener("click", function() {
 );
 
 
-let word = 'a';
 
-word = word + 's';
-console.log(word);
-console.log(toprow);
+// Set up cases using multi-class selector.
+
+//  Need to prevent a click from rewriting cells already containing a character.
