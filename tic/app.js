@@ -18,13 +18,13 @@ function cellClicked(e) {
     if  (e.target.textContent != '') {
         alert('This square has already been played!');
     } else if (e.target.textContent == '') {
-        if (i % 2 != 0) {
-            e.target.textContent = 'O';
+            if (i % 2 != 0) {
+                e.target.textContent = 'O';
 
-        } else {
-            e.target.textContent = 'X';
+            } else {
+                e.target.textContent = 'X';
 
-        }
+            }
     i++;
     }
 };
@@ -124,6 +124,7 @@ tlCell.addEventListener('click', function() {
     console.log('top: ' + toprow);
     console.log('left: ' + leftcol);
     console.log('diag1: ' + diag1);
+    checkResult();
 });
 
 tmCell.addEventListener('click', function() {
@@ -139,6 +140,7 @@ tmCell.addEventListener('click', function() {
     }
     console.log('top: ' + toprow);
     console.log('mid: ' + midcol);
+    checkResult();
 });
 
 trCell.addEventListener('click', function() {
@@ -157,6 +159,7 @@ trCell.addEventListener('click', function() {
     console.log('top: ' + toprow);
     console.log('right: ' + rightcol);
     console.log('diag2: ' + diag2);
+    checkResult();
 });
 
 clCell.addEventListener('click', function() {
@@ -172,6 +175,7 @@ clCell.addEventListener('click', function() {
     }
         console.log('center: ' + centerrow);
         console.log('left: ' + leftcol);
+        checkResult();
 });
 
 cmCell.addEventListener('click', function() {
@@ -193,6 +197,7 @@ cmCell.addEventListener('click', function() {
     console.log('middle: ' + midcol);
     console.log('diag1: ' + diag1);
     console.log('diag2: ' + diag2);
+    checkResult();
 });
 
 crCell.addEventListener('click', function() {
@@ -208,6 +213,7 @@ crCell.addEventListener('click', function() {
     }
     console.log('center: ' + centerrow);
     console.log('right: ' + rightcol);
+    checkResult();
 });
 
 blCell.addEventListener('click', function() {
@@ -226,6 +232,7 @@ blCell.addEventListener('click', function() {
     console.log('bottom: ' + botrow);
     console.log('left: ' + leftcol);
     console.log('diag2: ' + diag2);
+    checkResult();
 });
 
 bmCell.addEventListener('click', function() {
@@ -241,6 +248,7 @@ bmCell.addEventListener('click', function() {
     }
     console.log('bottom: ' + botrow);
     console.log('middle: ' + midcol);
+    checkResult();
 });
 
 brCell.addEventListener('click', function() {
@@ -259,6 +267,7 @@ brCell.addEventListener('click', function() {
     console.log('bottom: ' + botrow);
     console.log('right: ' + rightcol);
     console.log('diag1: ' + diag1);
+    checkResult();
 });
 
 
@@ -332,3 +341,41 @@ function oAddToDiag2() {
 };
 
 
+
+
+// Determinging the results
+
+let result = document.querySelector('h3.result');
+
+function checkResult() {
+
+    if ((toprow == 'XXX') ||
+        (centerrow == 'XXX') ||
+        (botrow =='XXX') ||
+        (leftcol== 'XXX') ||
+        (midcol == 'XXX') ||
+        (rightcol == 'XXX') ||
+        (diag1 == 'XXX') ||
+        (diag2 == 'XXX')) 
+        {
+            result.target.textContent = ('Player 2 Wins!');
+
+    } else if ((toprow == 'OOO') ||
+        (centerrow == 'OOO') ||
+        (botrow == 'OOO') ||
+        (leftcol== 'OOO') ||
+        (midcol == 'OOO') ||
+        (rightcol == 'OOO') ||
+        (diag1 == 'OOO') ||
+        (diag2 == 'OOO')) {
+
+            result.target.textContent = ('Player 1 Wins!');
+
+    } else if ((toprow == /[XO][XO][XO]/) &&
+        (centerrow == /[XO][XO][XO]/) &&
+        (botrow == /[XO][XO][XO]/)) {
+
+            result.target.textContent = ("It's a Draw!");
+
+        }
+}

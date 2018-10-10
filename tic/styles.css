@@ -63,3 +63,12 @@ h1 {
     margin-bottom: 1em;
     color: darkslateblue;
 }
+
+h3 {
+    display: inline-block;
+    color: darkslateblue;
+    font-stretch: expanded;
+    border-style: solid;
+    border-color: darkslateblue;
+    padding: .25rem;
+}
