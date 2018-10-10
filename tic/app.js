@@ -63,6 +63,15 @@ btn.addEventListener("click", function() {
         rightcol = '';
         diag1 = '';
         diag2 = '';
+        tl = 0;
+        tm = 0;
+        tr = 0;
+        cl = 0;
+        cm = 0;
+        cr = 0;
+        bl = 0;
+        bm = 0;
+        br = 0;
     });
 
 }
@@ -87,45 +96,63 @@ let blCell = document.querySelector('.bottom.left');
 let bmCell = document.querySelector('.bottom.middle');
 let brCell = document.querySelector('.bottom.right');
 
-
+let tl = 0;
+let tm = 0;
+let tr = 0;
+let cl = 0;
+let cm = 0;
+let cr = 0;
+let bl = 0;
+let bm = 0;
+let br = 0;
 
 
 tlCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToTop();
-        xAddToLeft();
-        xAddToDiag1();
-    } else {
-        oAddToTop();
-        oAddToLeft();
-        oAddToDiag1();
-    }
+    if  (tl == 0) {
+        if (i % 2 != 0) {
+            xAddToTop();
+            xAddToLeft();
+            xAddToDiag1();
+        } else {
+            oAddToTop();
+            oAddToLeft();
+            oAddToDiag1();
+        }
+    tl++;    
+    } else {}
+
     console.log('top: ' + toprow);
     console.log('left: ' + leftcol);
     console.log('diag1: ' + diag1);
 });
 
 tmCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToTop();
-        xAddToMiddle();
-    } else {
-        oAddToTop();
-        oAddToMiddle();
+    if  (tm == 0) {
+        if (i % 2 != 0) {
+            xAddToTop();
+            xAddToMiddle();
+        } else {
+            oAddToTop();
+            oAddToMiddle();
+        }
+    tm++;
     }
     console.log('top: ' + toprow);
     console.log('mid: ' + midcol);
 });
 
 trCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToTop();
-        xAddToRight();
-        xAddToDiag2();
-    } else {
-        oAddToTop();
-        oAddToRight();
-        oAddToDiag2();
+    if  (tr == 0) {
+        if (i % 2 != 0) {
+            xAddToTop();
+            xAddToRight();
+            xAddToDiag2();
+        } else {
+            oAddToTop();
+            oAddToRight();
+            oAddToDiag2();
+        }
+    tr++;
     }
     console.log('top: ' + toprow);
     console.log('right: ' + rightcol);
@@ -133,28 +160,34 @@ trCell.addEventListener('click', function() {
 });
 
 clCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToCenter();
-        xAddToLeft();
-    } else {
-        oAddToCenter();
-        oAddToLeft();
+    if  (cl == 0) {
+        if (i % 2 != 0) {
+            xAddToCenter();
+            xAddToLeft();
+        } else {
+            oAddToCenter();
+            oAddToLeft();
+        }
+    cl++;
     }
-    console.log('center: ' + centerrow);
-    console.log('left: ' + leftcol);
+        console.log('center: ' + centerrow);
+        console.log('left: ' + leftcol);
 });
 
 cmCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToCenter();
-        xAddToMiddle();
-        xAddToDiag1();
-        xAddToDiag2();
-    } else {
-        oAddToCenter();
-        oAddToMiddle();
-        oAddToDiag1();
-        oAddToDiag2();
+    if  (cm == 0) {
+        if (i % 2 != 0) {
+            xAddToCenter();
+            xAddToMiddle();
+            xAddToDiag1();
+            xAddToDiag2();
+        } else {
+            oAddToCenter();
+            oAddToMiddle();
+            oAddToDiag1();
+            oAddToDiag2();
+        }
+    cm++;
     }
     console.log('top: ' + toprow);
     console.log('middle: ' + midcol);
@@ -163,26 +196,32 @@ cmCell.addEventListener('click', function() {
 });
 
 crCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToCenter();
-        xAddToRight();
-    } else {
-        oAddToCenter();
-        oAddToRight();
+    if  (cr == 0) {
+        if (i % 2 != 0) {
+            xAddToCenter();
+            xAddToRight();
+        } else {
+            oAddToCenter();
+            oAddToRight();
+        }
+    cr++;
     }
     console.log('center: ' + centerrow);
-    console.log('right: ' + righttcol);
+    console.log('right: ' + rightcol);
 });
 
 blCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToBottom();
-        xAddToLeft();
-        xAddToDiag2();
-    } else {
-        oAddToBottom();
-        oAddToLeft();
-        oAddToDiag2();
+    if  (bl == 0) {
+        if (i % 2 != 0) {
+            xAddToBottom();
+            xAddToLeft();
+            xAddToDiag2();
+        } else {
+            oAddToBottom();
+            oAddToLeft();
+            oAddToDiag2();
+        }
+    bl++;
     }
     console.log('bottom: ' + botrow);
     console.log('left: ' + leftcol);
@@ -190,18 +229,22 @@ blCell.addEventListener('click', function() {
 });
 
 bmCell.addEventListener('click', function() {
-    if (i % 2 != 0) {
-        xAddToBottom();
-        xAddToMiddle();
-    } else {
-        oAddToBottom();
-        oAddToMiddle();
+    if  (bm == 0) {
+        if (i % 2 != 0) {
+            xAddToBottom();
+            xAddToMiddle();
+        } else {
+            oAddToBottom();
+            oAddToMiddle();
+        }
+    bm++;
     }
     console.log('bottom: ' + botrow);
     console.log('middle: ' + midcol);
 });
 
 brCell.addEventListener('click', function() {
+    if  (br == 0) {
         if (i % 2 != 0) {
             xAddToBottom();
             xAddToRight();
@@ -211,6 +254,8 @@ brCell.addEventListener('click', function() {
             oAddToRight();
             oAddToDiag1();
         }
+    br++;
+    }
     console.log('bottom: ' + botrow);
     console.log('right: ' + rightcol);
     console.log('diag1: ' + diag1);
